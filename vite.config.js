@@ -6,5 +6,5 @@ import react from '@vitejs/plugin-react'
 // If you deploy to https://<username>.github.io/ (user page), leave it as '/'.
 export default defineConfig({
   plugins: [react()],
-  base: '/',
+  base: '/NES-PersonalPortfolio/',
 })

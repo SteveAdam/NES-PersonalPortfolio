@@ -1,8 +1,8 @@
 # Steve Adam — 8-bit NES Portfolio
 
 My personal portfolio site styled after classic NES games, built with React
-(Vite) and [nes.css](https://nostalgic-css.github.io/NES.css/). Inspired by
-https://raseraa0.github.io/.
+(Vite) and [nes.css](https://nostalgic-css.github.io/NES.css/).
+
 
 ## Concept
 
