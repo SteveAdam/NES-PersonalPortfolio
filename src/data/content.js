@@ -56,6 +56,7 @@ export const skillCategories = [
     { name: 'React', icon: 'react' },
     { name: 'Next.js', icon: 'nextjs' },
     { name: 'Angular', icon: 'angular' },
+    { name: 'Svelte', icon: 'svelte' },
     { name: 'Tailwind', icon: 'tailwind' },
     { name: 'HTML5', icon: 'html' },
     { name: 'CSS3', icon: 'css' },
@@ -64,10 +65,12 @@ export const skillCategories = [
     { name: 'Node.js', icon: 'nodejs' },
     { name: 'Express', icon: 'express' },
     { name: 'Spring Boot', icon: 'spring' },
+    { name: 'Django', icon: 'django' },
   ]},
   { id: 'mobile', title: 'Mobile Development', items: [
     { name: 'React Native', icon: 'react' },
     { name: 'Flutter', icon: 'flutter' },
+    { name: 'Android Studio', icon: 'androidstudio' },
   ]},
   { id: 'databases', title: 'Databases', items: [
     { name: 'PostgreSQL', icon: 'postgresql' },
@@ -99,7 +102,7 @@ export const skillCategories = [
   ]},
   { id: 'ui', title: 'UI', items: [
     { name: 'Figma', icon: 'figma' },
-    { name: 'Storybook', icon: 'storybook' },
+    { name: 'Wordpress', icon: 'wordpress' },
     { name: 'Sass', icon: 'sass' },
     { name: 'Bootstrap', icon: 'bootstrap' },
   ]},
@@ -107,32 +110,61 @@ export const skillCategories = [
     { name: 'Vercel', icon: 'vercel' },
     { name: 'Netlify', icon: 'netlify' },
   ]},
+  { id: 'qa', title: 'QA & Automation', items: [
+    { name: 'Selenium', icon: 'selenium' },
+    { name: 'Postman', icon: 'postman' },
+    { name: 'Grafana', icon: 'grafana' },
+  ]},
   { id: 'tools', title: 'Tools', items: [
     { name: 'Git', icon: 'git' },
     { name: 'VS Code', icon: 'vscode' },
-    { name: 'Postman', icon: 'postman' },
+    { name: 'Vim', icon: 'vim' },
+    { name: 'Powershell', icon: 'powershell' },
     { name: 'Linux', icon: 'linux' },
   ]},
 ]
 
 // Projects — one "item card" each.
+
 export const projects = [
   {
     id: 'youthlink',
     title: 'YouthLink Platform',
-    siteUrl: 'https://www.ay-link.com/home',
+    siteUrl: 'https://www.ay-link.com/home', // TODO: swap for a real screenshot or siteUrl
     summary:
       'Built a youth engagement and recruiting platform linking career seekers with jobs and internships, using Angular and TypeScript integrated with a Node.js backend for a responsive, seamless experience.',
     tags: ['Angular', 'TypeScript', 'Node.js'],
+    icon: 'angular',
+    techStack: ['Angular', 'TypeScript', 'Node.js', 'REST API'],
+    objectives: [
+      'Architected the seeker/employer platform, defining the component structure (Angular) and API contract (Node.js).',
+      'Built reusable, typed UI components to keep the seeker and employer-facing flows consistent.',
+      'Integrated the Node.js backend for job listings, applications, and profile management.',
+      'Focused on responsive layouts so the experience holds up across desktop and mobile.',
+    ],
+    links: {
+      // repo: 'https://github.com/SteveAdam/youthlink', // TODO: add real repo URL
+      // demo: 'https://www.ay-link.com/home',
+    },
   },
   {
     id: 'ncba-dairy',
     title: 'NCBA Dairy Collection System',
-    //System is currently under development, so no live site yet. Use the photo field for a screenshot.
     photo: dairyMultitenantApp,
     summary:
       'A multi-tenant mobile app for dairy collection management, built with Flutter and a Java Spring Boot backend, with a scalable architecture supporting multiple cooperatives simultaneously.',
     tags: ['Flutter', 'Java', 'Spring Boot'],
+    icon: 'flutter',
+    techStack: ['Flutter', 'Java', 'Spring Boot', 'PostgreSQL'],
+    objectives: [
+      'Designed a multi-tenant data model so multiple dairy cooperatives could run on one shared system safely.',
+      'Built the Flutter mobile app used by collection agents in the field.',
+      'Implemented Spring Boot backend services for collection, tenant, and reporting logic.',
+      'Handled offline-friendly UX considerations for field agents with unreliable connectivity.',
+    ],
+    links: {
+      // repo: 'https://github.com/SteveAdam/ncba-dairy',
+    },
   },
   {
     id: 'bidco-yofinvoice',
@@ -141,6 +173,15 @@ export const projects = [
     summary:
       'End-to-end QA testing for Bidco\u2019s enterprise supply chain financing platform, identifying and tracking critical bugs ahead of deployment.',
     tags: ['QA Testing', 'Documentation'],
+    icon: null,
+    techStack: ['JMeter', 'Grafana', 'Manual & Automated QA'],
+    objectives: [
+      'Ran end-to-end QA testing across the supply chain financing workflow ahead of releases.',
+      'Identified, documented, and tracked critical bugs through to resolution with the dev team.',
+      'Used JMeter and Grafana for performance and load testing under realistic traffic.',
+      'Wrote test plans and documentation to make QA coverage repeatable across releases.',
+    ],
+    links: {},
   },
   {
     id: 'numeral-tech',
@@ -149,6 +190,14 @@ export const projects = [
     summary:
       'Designed and implemented user-friendly, intuitive interfaces for an education technology platform, focused on improving learner engagement.',
     tags: ['HTML', 'CSS', 'JavaScript'],
+    icon: 'html',
+    techStack: ['HTML5', 'CSS3', 'JavaScript'],
+    objectives: [
+      'Designed learner-facing interfaces focused on reducing friction in the course-taking flow.',
+      'Implemented responsive layouts in vanilla HTML/CSS/JS to keep the footprint light.',
+      'Iterated on UI based on learner engagement feedback.',
+    ],
+    links: {},
   },
   {
     id: 'real-estate-chain',
@@ -157,6 +206,15 @@ export const projects = [
     summary:
       'Final-year project implementing secure property purchase and sale mechanisms via smart contracts on Ethereum, for transparent real estate transactions.',
     tags: ['React', 'Solidity', 'Ethereum'],
+    icon: 'solidity',
+    techStack: ['React', 'Solidity', 'Ethereum', 'Web3.js'],
+    objectives: [
+      'Designed and wrote Solidity smart contracts to handle property listing, escrow, and transfer of ownership.',
+      'Built the React frontend for browsing listings and initiating purchases via a connected wallet.',
+      'Focused the contract logic on transparency and tamper-resistance for transaction history.',
+      'Final-year project — deployed and tested against a local Ethereum testnet.',
+    ],
+    links: {},
   },
   {
     id: 'mobile-medic',
@@ -165,6 +223,14 @@ export const projects = [
     summary:
       'A telemedicine Android app connecting patients with doctors for remote diagnosis, with an intuitive UI/UX for patient\u2013doctor interactions.',
     tags: ['Kotlin', 'Android Studio'],
+    icon: 'kotlin',
+    techStack: ['Kotlin', 'Android Studio'],
+    objectives: [
+      'Built the Android app end-to-end in Kotlin, from patient onboarding to doctor consultation flows.',
+      'Designed the UI/UX around minimizing steps between "I need a doctor" and getting connected.',
+      'Handled patient-doctor session state and appointment scheduling logic.',
+    ],
+    links: {},
   },
   {
     id: 'uptime-monitor',
@@ -173,8 +239,76 @@ export const projects = [
     summary:
       'A URL monitoring system for tracking website availability, with automated alerts and performance tracking.',
     tags: ['JavaScript', 'Node.js'],
+    icon: 'nodejs',
+    techStack: ['Node.js', 'JavaScript'],
+    objectives: [
+      'Built a polling service that periodically checks configured URLs for availability and response time.',
+      'Implemented automated alerting when a monitored endpoint goes down or degrades.',
+      'Tracked historical uptime/performance data for trend visibility.',
+    ],
+    links: {},
   },
 ]
+
+// export const projects = [
+//   {
+//     id: 'youthlink',
+//     title: 'YouthLink Platform',
+//     siteUrl: 'https://www.ay-link.com/home',
+//     summary:
+//       'Built a youth engagement and recruiting platform linking career seekers with jobs and internships, using Angular and TypeScript integrated with a Node.js backend for a responsive, seamless experience.',
+//     tags: ['Angular', 'TypeScript', 'Node.js'],
+//   },
+//   {
+//     id: 'ncba-dairy',
+//     title: 'NCBA Dairy Collection System',
+//     //System is currently under development, so no live site yet. Use the photo field for a screenshot.
+//     photo: dairyMultitenantApp,
+//     summary:
+//       'A multi-tenant mobile app for dairy collection management, built with Flutter and a Java Spring Boot backend, with a scalable architecture supporting multiple cooperatives simultaneously.',
+//     tags: ['Flutter', 'Java', 'Spring Boot'],
+//   },
+//   {
+//     id: 'bidco-yofinvoice',
+//     title: 'Bidco Yofinvoice',
+//     siteUrl: 'https://yofinvoice.com/for-buyers/',
+//     summary:
+//       'End-to-end QA testing for Bidco\u2019s enterprise supply chain financing platform, identifying and tracking critical bugs ahead of deployment.',
+//     tags: ['QA Testing', 'Documentation'],
+//   },
+//   {
+//     id: 'numeral-tech',
+//     title: 'Numeral Tech Academy UI/UX',
+//     siteUrl: 'https://numeraliot.com/',
+//     summary:
+//       'Designed and implemented user-friendly, intuitive interfaces for an education technology platform, focused on improving learner engagement.',
+//     tags: ['HTML', 'CSS', 'JavaScript'],
+//   },
+//   {
+//     id: 'real-estate-chain',
+//     title: 'Decentralized Real Estate App',
+//     siteUrl: 'https://rmm.realtoken.network/markets/',
+//     summary:
+//       'Final-year project implementing secure property purchase and sale mechanisms via smart contracts on Ethereum, for transparent real estate transactions.',
+//     tags: ['React', 'Solidity', 'Ethereum'],
+//   },
+//   {
+//     id: 'mobile-medic',
+//     title: 'Mobile Medic',
+//     siteUrl: 'https://medic.org/stories/tag/mobile-app/',
+//     summary:
+//       'A telemedicine Android app connecting patients with doctors for remote diagnosis, with an intuitive UI/UX for patient\u2013doctor interactions.',
+//     tags: ['Kotlin', 'Android Studio'],
+//   },
+//   {
+//     id: 'uptime-monitor',
+//     title: 'HTTP Uptime Monitoring Tool',
+//     siteUrl: 'https://uptimerobot.com/',
+//     summary:
+//       'A URL monitoring system for tracking website availability, with automated alerts and performance tracking.',
+//     tags: ['JavaScript', 'Node.js'],
+//   },
+// ]
 
 // Color palette for project cards, used in a repeating cycle.
 export const timeline = [

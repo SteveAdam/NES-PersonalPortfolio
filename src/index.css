@@ -60,16 +60,22 @@ h3,
   background: var(--bg-panel);
   border-bottom: 4px solid var(--text-main);
   padding: 19px 12px;
-  overflow-x: auto;
+}
+
+.world-map__row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
 }
 
 .world-map__track {
   position: relative;
   display: flex;
+  flex: 1 1 auto;
+  min-width: 0;
   justify-content: space-between;
-  max-width: 960px;
-  margin: 0 auto;
-  min-width: 520px;
   align-items: center;
 }
 
@@ -92,9 +98,10 @@ h3,
 .world-map__node {
   position: relative;
   z-index: 1;
+  flex: 1 1 0;
+  min-width: 0;
   background: none;
   border: none;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -102,6 +109,12 @@ h3,
   padding: 4px 6px;
   font-family: 'Press Start 2P', system-ui, sans-serif;
   color: var(--text-main);
+}
+
+.world-map__node:focus-visible,
+.world-map__link:focus-visible {
+  outline: 3px solid var(--accent-mint);
+  outline-offset: 3px;
 }
 
 .world-map__flag {
@@ -139,14 +152,10 @@ h3,
 }
 
 .world-map__links {
-  position: absolute;
-  top: 50%;
-  right: 24px;
-  transform: translateY(-50%);
   display: flex;
+  flex: 0 0 auto;
   align-items: center;
-  gap: 16px;
-  z-index: 2;
+  gap: 8px;
 }
 
 .world-map__link {
@@ -163,11 +172,48 @@ h3,
 }
 
 @media (max-width: 768px) {
+  .world-map {
+    padding: 14px 10px 12px;
+  }
+
+  .world-map__row {
+    display: block;
+  }
+
   .world-map__links {
-    position: static;
-    transform: none;
     justify-content: center;
     margin-top: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .world-map__track {
+    gap: 2px;
+  }
+
+  .world-map__node {
+    padding: 3px 1px;
+  }
+
+  .world-map__flag {
+    width: 34px;
+    height: 34px;
+    border-width: 3px;
+    font-size: 9px;
+  }
+
+  .world-map__label {
+    display: none;
+  }
+
+  .world-map__player {
+    top: -20px;
+    font-size: 14px;
+  }
+
+  .world-map__link {
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -386,26 +432,19 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--bg-panel);
-  border: 3px solid var(--text-main);
-  color: var(--text-main);
   font-family: 'VT323', monospace;
   font-size: 17px;
   padding: 8px 16px;
-  cursor: pointer;
-  clip-path: polygon(8px 0, 100% 0, 100% calc(100% - 8px), calc(100% - 8px) 100%, 0 100%, 0 8px);
-  transition: transform 0.12s steps(2), border-color 0.12s, color 0.12s, background 0.12s;
+  transition: transform 0.12s steps(2), filter 0.12s steps(2);
 }
 
 .skills-pill:hover {
   transform: translateY(-2px);
-  border-color: var(--accent-mint);
+  filter: brightness(1.12);
 }
 
 .skills-pill.is-active {
-  background: var(--accent-mint);
-  border-color: var(--accent-mint);
-  color: var(--bg-deep);
+  transform: translateY(-1px);
 }
 
 .skills-pill__count {
@@ -491,25 +530,20 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #e2554a;
-  border: 3px solid #7a1f19;
-  color: #2a0805;
-  font-family: 'Press Start 2P', system-ui, sans-serif;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow:
-    inset -3px -3px 0 rgba(0, 0, 0, 0.35),
-    inset 3px 3px 0 rgba(255, 255, 255, 0.28),
-    0 4px 0 rgba(0, 0, 0, 0.4);
+  transition: transform 0.12s steps(2), filter 0.12s steps(2);
+}
+
+.skill-modal-frame__close .nes-icon {
+  transform: scale(0.85);
 }
 
 .skill-modal-frame__close:hover {
-  filter: brightness(1.08);
+  transform: translateY(-2px);
+  filter: brightness(1.12);
 }
 
 .skill-modal-frame__close:active {
   transform: translateY(2px);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 /* ---------------- Inner panel ---------------- */
@@ -547,26 +581,25 @@ section {
   display: none;
 }
 
-.skill-modal__nav {
+.nes-btn.skill-modal__nav {
   width: 34px;
   height: 34px;
-  display: flex;
+  padding: 0;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: var(--accent-amber);
-  color: var(--bg-deep);
-  border: 3px solid #92650a;
   font-family: 'Press Start 2P', system-ui, sans-serif;
   font-size: 14px;
-  cursor: pointer;
-  box-shadow:
-    inset -2px -2px 0 rgba(0, 0, 0, 0.3),
-    inset 2px 2px 0 rgba(255, 255, 255, 0.4);
+  line-height: 1;
+}
+
+.skill-modal__nav:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
 }
 
 .skill-modal__nav:active {
   transform: translateY(2px);
-  box-shadow: inset 2px 2px 0 rgba(0, 0, 0, 0.3);
 }
 
 .skill-modal__body {
@@ -619,19 +652,19 @@ section {
 
 .skill-tile__name {
   font-family: 'VT323', monospace;
-  font-size: 16px;
+  font-size: 18px;
   text-align: center;
 }
 
 /* ---------------- Side "tabs" (rounded roster cards) ---------------- */
 
 .skill-modal__side {
-  width: 300px;
+  width: 400px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 16px;
+  padding: 16px 20px;
   overflow-y: auto;
   background: var(--bg-deep);
   border-left: 4px solid var(--text-main);
@@ -642,20 +675,14 @@ section {
   align-items: center;
   gap: 12px;
   width: 100%;
-  padding: 10px 14px;
-  background: #f2f2f5;
-  border: 3px solid var(--accent-mint);
-  color: var(--bg-panel);
-  border-radius: 10px;
-  color: #1d1e2c;
+  padding: 10px 9px;
   text-align: left;
-  cursor: pointer;
-  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.25);
-  transition: transform 0.12s steps(2), background 0.12s, box-shadow 0.12s;
+  transition: transform 0.12s steps(2), filter 0.12s steps(2);
 }
 
 .skill-tab:hover {
   transform: translateY(-2px);
+  filter: brightness(1.12);
 }
 
 .skill-tab__avatar {
@@ -663,7 +690,7 @@ section {
   height: 40px;
   flex-shrink: 0;
   padding: 6px;
-  border-radius: 50%;
+  border-radius: 0;
   background: #fff;
   object-fit: contain;
 }
@@ -677,7 +704,7 @@ section {
 
 .skill-tab__title {
   font-family: 'Press Start 2P', system-ui, sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   line-height: 1.5;
 }
 
@@ -688,11 +715,7 @@ section {
 }
 
 .skill-tab.is-active {
-  background: var(--accent-mint);
-  border: 3px solid var(--bg-panel);
-  color: var(--bg-deep);
-  transform: scale(1.03);
-  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.35);
+  transform: translateY(-1px);
 }
 
 .skill-tab.is-active .skill-tab__count {
@@ -878,6 +901,78 @@ section {
 }
 
 /* ============ Project cards ============ */
+.project-modal__field {
+  margin: 0 0 14px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.project-modal__field-label {
+  font-size: 11px;
+  color: var(--accent-mint);
+}
+
+.project-modal__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 18px 0 22px;
+}
+
+.project-modal__link-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 11px;
+  text-decoration: none;
+  transition: transform 0.12s steps(2), filter 0.12s steps(2);
+}
+
+.project-modal__link-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+}
+
+.project-modal__link-btn--repo {
+  /* Its primary colour is supplied by the .is-primary NES modifier. */
+}
+
+.project-modal__objectives {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-modal__objective {
+  margin: 0;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.project-modal__objective-marker {
+  color: var(--accent-mint);
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 11px;
+  margin-right: 4px;
+}
+
+.project-tab__avatar {
+  border-radius: 8px;
+  padding: 6px;
+}
+
+.project-tab__avatar--monogram {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Press Start 2P', system-ui, sans-serif;
+  font-size: 16px;
+  color: #fff;
+}
+
 
 .project-grid {
   display: grid;
@@ -904,6 +999,8 @@ section {
 }
 
 .project-card {
+  font: inherit;
+  text-align: inherit;
   position: relative;
   width: 100%;
   min-height: 440px;

@@ -33,7 +33,8 @@ export default function Skills() {
           <button
             key={cat.id}
             type="button"
-            className={`skills-pill${activeId === cat.id ? ' is-active' : ''}`}
+            className={`nes-btn skills-pill${activeId === cat.id ? ' is-primary is-active' : ''}`}
+            aria-pressed={activeId === cat.id}
             onClick={() => setActiveId(cat.id)}
           >
             <span className="skills-pill__label">{cat.title}</span>
@@ -50,11 +51,11 @@ export default function Skills() {
             </div>
             <button
               type="button"
-              className="skill-modal-frame__close"
+              className="nes-btn is-error skill-modal-frame__close"
               aria-label="Close"
               onClick={() => setActiveId(null)}
             >
-              ✕
+              <i className="nes-icon close is-small"></i>
             </button>
 
             <div className="skill-modal" role="dialog" aria-modal="true" aria-label={active.title}>
@@ -63,8 +64,8 @@ export default function Skills() {
                   &gt; {active.title}
                 </span>
                 <div className="skill-modal__nav-group">
-                  <button type="button" className="skill-modal__nav" aria-label="Previous category" onClick={goPrev}>‹</button>
-                  <button type="button" className="skill-modal__nav" aria-label="Next category" onClick={goNext}>›</button>
+                  <button type="button" className="nes-btn is-warning skill-modal__nav" aria-label="Previous category" onClick={goPrev}>‹</button>
+                  <button type="button" className="nes-btn is-warning skill-modal__nav" aria-label="Next category" onClick={goNext}>›</button>
                 </div>
               </div>
 
@@ -74,8 +75,8 @@ export default function Skills() {
                     LOADOUT // {active.items.length} EQUIPPED
                   </p>
                   <div className="skill-modal__nav-group skill-modal__nav-group--mobile">
-                    <button type="button" className="skill-modal__nav" aria-label="Previous category" onClick={goPrev}>‹</button>
-                    <button type="button" className="skill-modal__nav" aria-label="Next category" onClick={goNext}>›</button>
+                    <button type="button" className="nes-btn is-warning skill-modal__nav" aria-label="Previous category" onClick={goPrev}>‹</button>
+                    <button type="button" className="nes-btn is-warning skill-modal__nav" aria-label="Next category" onClick={goNext}>›</button>
                   </div>
                   <div className="skill-loadout-panel">
                     <div className="skill-modal__grid">
@@ -99,7 +100,8 @@ export default function Skills() {
                     <button
                       key={cat.id}
                       type="button"
-                      className={`skill-tab${cat.id === activeId ? ' is-active' : ''}`}
+                      className={`nes-btn skill-tab${cat.id === activeId ? ' is-primary is-active' : ''}`}
+                      aria-pressed={cat.id === activeId}
                       onClick={() => setActiveId(cat.id)}
                     >
                       <img
