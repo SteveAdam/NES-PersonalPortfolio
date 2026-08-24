@@ -3,6 +3,7 @@
 // site.
 // ---------------------------------------------------------------------------
 import dairyMultitenantApp from '../assets/DairyMultitenantApp.png'
+import YouthlinkApp from '../assets/Youthlink.png'
 export const profile = {
   name: 'Steve Adam Maina',
   role: 'Full Stack Developer',
@@ -128,9 +129,66 @@ export const skillCategories = [
 
 export const projects = [
   {
+    id: 'media-converter',
+    title: 'Media Converter',
+    siteUrl: 'https://github.com/SteveAdam/MediaConverter',
+    summary:
+      'Universal media converter for YouTube videos, playlists, and local files, plus document conversion across PDF, PPTX, XLSX, DOCX, and more.',
+    tags: ['TypeScript', 'React', 'Node.js'],
+    icon: 'ts',
+    techStack: ['TypeScript', 'React', 'Node.js'],
+    objectives: [
+      'Built a converter that handles YouTube videos, playlists, and user-uploaded files with quality options.',
+      'Added document conversion across common office formats (PDF, PPTX, XLSX, DOCX).',
+      'Kept the conversion pipelines typed in TypeScript so format handling stays consistent.',
+    ],
+    links: {
+      repo: 'https://github.com/SteveAdam/MediaConverter',
+    },
+  },
+  {
+    id: 'farmers-forecast',
+    title: 'Farmers Forecast',
+    siteUrl: 'https://farmers-forecasts-d1fd68.netlify.app/',
+    summary:
+      'A React weather dashboard for Kenyan farms: real-time conditions, 7-day forecasts, and AI-generated summaries to support planting and harvest decisions.',
+    tags: ['React', 'JavaScript', 'Vite'],
+    icon: 'react',
+    techStack: ['React', 'Vite', 'WeatherAI API', 'Gemini'],
+    objectives: [
+      'Integrated live weather and 7-day forecast APIs with AI summaries for farm planning.',
+      'Added quick-access locations for Kenyan farms (Nairobi, Kisii, Bomet, Kericho) and saved favorites in the browser.',
+      'Designed a responsive dashboard so the same view works on desktop, tablet, and mobile.',
+    ],
+    links: {
+      repo: 'https://github.com/SteveAdam/Farmers-Forecast',
+      demo: 'https://farmers-forecasts-d1fd68.netlify.app/',
+    },
+  },
+  {
+    id: 'nes-portfolio',
+    title: 'NES Personal Portfolio',
+    siteUrl: 'https://steveadam.github.io/NES-PersonalPortfolio/',
+    summary:
+      'A personal portfolio styled after classic NES games, framed as a Super Mario world map and built with React, Vite, and nes.css.',
+    tags: ['React', 'Vite', 'CSS'],
+    icon: 'react',
+    techStack: ['React', 'Vite', 'nes.css'],
+    objectives: [
+      'Designed the site as a game world map, with a sticky progress bar tracking each section like a Mario level.',
+      'Presented skills as RPG stat bars, projects as item cards, and experience as a completed quest log.',
+      'Shipped a responsive NES aesthetic using Press Start 2P, VT323, and nes.css on a dark debug-console palette.',
+    ],
+    links: {
+      repo: 'https://github.com/SteveAdam/NES-PersonalPortfolio',
+      demo: 'https://steveadam.github.io/NES-PersonalPortfolio/',
+    },
+  },
+  {
     id: 'youthlink',
     title: 'YouthLink Platform',
-    siteUrl: 'https://www.ay-link.com/home', // TODO: swap for a real screenshot or siteUrl
+    photo: YouthlinkApp,
+    // siteUrl: 'https://www.ay-link.com/home', // TODO: swap for a real screenshot or siteUrl
     summary:
       'Built a youth engagement and recruiting platform linking career seekers with jobs and internships, using Angular and TypeScript integrated with a Node.js backend for a responsive, seamless experience.',
     tags: ['Angular', 'TypeScript', 'Node.js'],
@@ -249,66 +307,6 @@ export const projects = [
     links: {},
   },
 ]
-
-// export const projects = [
-//   {
-//     id: 'youthlink',
-//     title: 'YouthLink Platform',
-//     siteUrl: 'https://www.ay-link.com/home',
-//     summary:
-//       'Built a youth engagement and recruiting platform linking career seekers with jobs and internships, using Angular and TypeScript integrated with a Node.js backend for a responsive, seamless experience.',
-//     tags: ['Angular', 'TypeScript', 'Node.js'],
-//   },
-//   {
-//     id: 'ncba-dairy',
-//     title: 'NCBA Dairy Collection System',
-//     //System is currently under development, so no live site yet. Use the photo field for a screenshot.
-//     photo: dairyMultitenantApp,
-//     summary:
-//       'A multi-tenant mobile app for dairy collection management, built with Flutter and a Java Spring Boot backend, with a scalable architecture supporting multiple cooperatives simultaneously.',
-//     tags: ['Flutter', 'Java', 'Spring Boot'],
-//   },
-//   {
-//     id: 'bidco-yofinvoice',
-//     title: 'Bidco Yofinvoice',
-//     siteUrl: 'https://yofinvoice.com/for-buyers/',
-//     summary:
-//       'End-to-end QA testing for Bidco\u2019s enterprise supply chain financing platform, identifying and tracking critical bugs ahead of deployment.',
-//     tags: ['QA Testing', 'Documentation'],
-//   },
-//   {
-//     id: 'numeral-tech',
-//     title: 'Numeral Tech Academy UI/UX',
-//     siteUrl: 'https://numeraliot.com/',
-//     summary:
-//       'Designed and implemented user-friendly, intuitive interfaces for an education technology platform, focused on improving learner engagement.',
-//     tags: ['HTML', 'CSS', 'JavaScript'],
-//   },
-//   {
-//     id: 'real-estate-chain',
-//     title: 'Decentralized Real Estate App',
-//     siteUrl: 'https://rmm.realtoken.network/markets/',
-//     summary:
-//       'Final-year project implementing secure property purchase and sale mechanisms via smart contracts on Ethereum, for transparent real estate transactions.',
-//     tags: ['React', 'Solidity', 'Ethereum'],
-//   },
-//   {
-//     id: 'mobile-medic',
-//     title: 'Mobile Medic',
-//     siteUrl: 'https://medic.org/stories/tag/mobile-app/',
-//     summary:
-//       'A telemedicine Android app connecting patients with doctors for remote diagnosis, with an intuitive UI/UX for patient\u2013doctor interactions.',
-//     tags: ['Kotlin', 'Android Studio'],
-//   },
-//   {
-//     id: 'uptime-monitor',
-//     title: 'HTTP Uptime Monitoring Tool',
-//     siteUrl: 'https://uptimerobot.com/',
-//     summary:
-//       'A URL monitoring system for tracking website availability, with automated alerts and performance tracking.',
-//     tags: ['JavaScript', 'Node.js'],
-//   },
-// ]
 
 // Color palette for project cards, used in a repeating cycle.
 export const timeline = [
