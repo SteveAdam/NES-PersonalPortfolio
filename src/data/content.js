@@ -45,84 +45,110 @@ export const levels = [
 
 // Skill "stat bars" — percentages are placeholders, adjust to your own
 export const skillCategories = [
-  { id: 'languages', title: 'Languages', items: [
-    { name: 'Python', icon: 'python' },
-    { name: 'Golang', icon: 'go' },
-    { name: 'Java', icon: 'java' },
-    { name: 'TypeScript', icon: 'ts' },
-    { name: 'JavaScript', icon: 'js' },
-    { name: 'SQL', icon: 'postgresql' },
-  ]},
-  { id: 'frontend', title: 'Frontend', items: [
-    { name: 'React', icon: 'react' },
-    { name: 'Next.js', icon: 'nextjs' },
-    { name: 'Angular', icon: 'angular' },
-    { name: 'Svelte', icon: 'svelte' },
-    { name: 'Tailwind', icon: 'tailwind' },
-    { name: 'HTML5', icon: 'html' },
-    { name: 'CSS3', icon: 'css' },
-  ]},
-  { id: 'backend', title: 'Backend', items: [
-    { name: 'Node.js', icon: 'nodejs' },
-    { name: 'Express', icon: 'express' },
-    { name: 'Spring Boot', icon: 'spring' },
-    { name: 'Django', icon: 'django' },
-  ]},
-  { id: 'mobile', title: 'Mobile Development', items: [
-    { name: 'React Native', icon: 'react' },
-    { name: 'Flutter', icon: 'flutter' },
-    { name: 'Android Studio', icon: 'androidstudio' },
-  ]},
-  { id: 'databases', title: 'Databases', items: [
-    { name: 'PostgreSQL', icon: 'postgresql' },
-    { name: 'MongoDB', icon: 'mongodb' },
-    { name: 'MySQL', icon: 'mysql' },
-    { name: 'Redis', icon: 'redis' },
-  ]},
-  { id: 'cloud', title: 'Cloud Platforms', items: [
-    { name: 'AWS', icon: 'aws' },
-    { name: 'GCP', icon: 'gcp' },
-  ]},
-  { id: 'ai', title: 'AI & Machine Learning', items: [
-    { name: 'PyTorch', icon: 'pytorch' },
-    { name: 'TensorFlow', icon: 'tensorflow' },
-    { name: 'scikit-learn', icon: 'sklearn' },
-    { name: 'OpenCV', icon: 'opencv' },
-    { name: 'Pandas', icon: 'pandas' },
-    { name: 'NumPy', icon: 'numpy' },
-  ]},
-  { id: 'technologies', title: 'Technologies', items: [
-    { name: 'GraphQL', icon: 'graphql' },
-    { name: 'Docker', icon: 'docker' },
-    { name: 'Kubernetes', icon: 'kubernetes' },
-  ]},
-  { id: 'cicd', title: 'CI/CD', items: [
-    { name: 'GitHub Actions', icon: 'githubactions' },
-    { name: 'Jenkins', icon: 'jenkins' },
-    { name: 'CircleCI', icon: 'circleci' },
-  ]},
-  { id: 'ui', title: 'UI', items: [
-    { name: 'Figma', icon: 'figma' },
-    { name: 'Wordpress', icon: 'wordpress' },
-    { name: 'Sass', icon: 'sass' },
-    { name: 'Bootstrap', icon: 'bootstrap' },
-  ]},
-  { id: 'hosting', title: 'Hosting', items: [
-    { name: 'Vercel', icon: 'vercel' },
-    { name: 'Netlify', icon: 'netlify' },
-  ]},
-  { id: 'qa', title: 'QA & Automation', items: [
-    { name: 'Selenium', icon: 'selenium' },
-    { name: 'Postman', icon: 'postman' },
-    { name: 'Grafana', icon: 'grafana' },
-  ]},
-  { id: 'tools', title: 'Tools', items: [
-    { name: 'Git', icon: 'git' },
-    { name: 'VS Code', icon: 'vscode' },
-    { name: 'Vim', icon: 'vim' },
-    { name: 'Powershell', icon: 'powershell' },
-    { name: 'Linux', icon: 'linux' },
-  ]},
+  {
+    id: 'languages', title: 'Languages', items: [
+      { name: 'Python', icon: 'python' },
+      { name: 'Golang', icon: 'go' },
+      { name: 'Java', icon: 'java' },
+      { name: 'TypeScript', icon: 'ts' },
+      { name: 'JavaScript', icon: 'js' },
+      { name: 'SQL', icon: 'postgresql' },
+    ]
+  },
+  {
+    id: 'frontend', title: 'Frontend', items: [
+      { name: 'React', icon: 'react' },
+      { name: 'Next.js', icon: 'nextjs' },
+      { name: 'Angular', icon: 'angular' },
+      { name: 'Svelte', icon: 'svelte' },
+      { name: 'Tailwind', icon: 'tailwind' },
+      { name: 'HTML5', icon: 'html' },
+      { name: 'CSS3', icon: 'css' },
+    ]
+  },
+  {
+    id: 'backend', title: 'Backend', items: [
+      { name: 'Node.js', icon: 'nodejs' },
+      { name: 'Express', icon: 'express' },
+      { name: 'Spring Boot', icon: 'spring' },
+      { name: 'Django', icon: 'django' },
+    ]
+  },
+  {
+    id: 'mobile', title: 'Mobile Development', items: [
+      { name: 'React Native', icon: 'react' },
+      { name: 'Flutter', icon: 'flutter' },
+      { name: 'Android Studio', icon: 'androidstudio' },
+    ]
+  },
+  {
+    id: 'databases', title: 'Databases', items: [
+      { name: 'PostgreSQL', icon: 'postgresql' },
+      { name: 'MongoDB', icon: 'mongodb' },
+      { name: 'MySQL', icon: 'mysql' },
+      { name: 'Redis', icon: 'redis' },
+    ]
+  },
+  {
+    id: 'cloud', title: 'Cloud Platforms', items: [
+      { name: 'AWS', icon: 'aws' },
+      { name: 'GCP', icon: 'gcp' },
+    ]
+  },
+  {
+    id: 'ai', title: 'AI & Machine Learning', items: [
+      { name: 'PyTorch', icon: 'pytorch' },
+      { name: 'TensorFlow', icon: 'tensorflow' },
+      { name: 'scikit-learn', icon: 'sklearn' },
+      { name: 'OpenCV', icon: 'opencv' },
+      { name: 'Pandas', icon: 'pandas' },
+      { name: 'NumPy', icon: 'numpy' },
+    ]
+  },
+  {
+    id: 'technologies', title: 'Technologies', items: [
+      { name: 'GraphQL', icon: 'graphql' },
+      { name: 'Docker', icon: 'docker' },
+      { name: 'Kubernetes', icon: 'kubernetes' },
+    ]
+  },
+  {
+    id: 'cicd', title: 'CI/CD', items: [
+      { name: 'GitHub Actions', icon: 'githubactions' },
+      { name: 'Jenkins', icon: 'jenkins' },
+      { name: 'CircleCI', icon: 'circleci' },
+    ]
+  },
+  {
+    id: 'ui', title: 'UI', items: [
+      { name: 'Figma', icon: 'figma' },
+      { name: 'Wordpress', icon: 'wordpress' },
+      { name: 'Sass', icon: 'sass' },
+      { name: 'Bootstrap', icon: 'bootstrap' },
+    ]
+  },
+  {
+    id: 'hosting', title: 'Hosting', items: [
+      { name: 'Vercel', icon: 'vercel' },
+      { name: 'Netlify', icon: 'netlify' },
+    ]
+  },
+  {
+    id: 'qa', title: 'QA & Automation', items: [
+      { name: 'Selenium', icon: 'selenium' },
+      { name: 'Postman', icon: 'postman' },
+      { name: 'Grafana', icon: 'grafana' },
+    ]
+  },
+  {
+    id: 'tools', title: 'Tools', items: [
+      { name: 'Git', icon: 'git' },
+      { name: 'VS Code', icon: 'vscode' },
+      { name: 'Vim', icon: 'vim' },
+      { name: 'Powershell', icon: 'powershell' },
+      { name: 'Linux', icon: 'linux' },
+    ]
+  },
 ]
 
 // Projects — one "item card" each.
@@ -370,5 +396,5 @@ export const contact = {
   email: 'steve.kyrosevents@gmail.com',
   github: 'https://github.com/SteveAdam',
   linkedin: 'https://www.linkedin.com/in/steve-adam-595b75307/',
-  cvFile: 'steve-adam-maina-cv.pdf',
+  cvFile: 'steve_adam_maina_cv.pdf',
 }

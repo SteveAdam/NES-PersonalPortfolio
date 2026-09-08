@@ -737,12 +737,19 @@ section {
     overflow-y: auto;
   }
 
+  .skill-modal__main {
+    flex: none;
+    overflow: visible;
+  }
+
   .skill-modal__side {
+    flex: none;
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
     border-left: none;
     border-top: 4px solid var(--text-main);
+    overflow: visible;
   }
 
   .skill-modal__titlebar .skill-modal__nav-group {
@@ -1284,42 +1291,42 @@ section {
 
 @media (max-width: 640px) {
   .quest-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
     gap: 12px;
   }
 
   .quest {
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
     gap: 10px;
     margin-bottom: 18px;
+    overflow: visible;
   }
 
-  .quest>.nes-octocat {
-    width: 26px;
-    height: 26px;
-    flex: 0 0 26px;
-    margin-top: 4px;
-    transform: none;
+  .quest-items {
+    width: 100%;
+    min-width: 0;
   }
 
-  .quest__heading {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-    margin-bottom: 6px;
-
+  .quest__heading,
+  .quest__title,
+  .quest__period,
+  .quest__objectives {
+    max-width: 100%;
   }
 
   .quest__title {
-    font-size: 12px;
-    line-height: 1.5;
-
-  }
-
-  .quest__period {
-    font-size: 12px;
+    margin-left: 0;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   .quest__objectives {
     padding-left: 18px;
+    overflow-wrap: anywhere;
   }
 
   .quest__objectives li {
