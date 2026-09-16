@@ -17,6 +17,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.nes-icon.github::before,
+.nes-icon.linkedin::before,
+.nes-icon.gmail::before {
+  content: "" !important;
+}
+
 body {
   margin: 0;
   min-height: 100vh;
@@ -109,14 +115,15 @@ h3,
 }
 
 .world-map__flag {
-  width: 40px;
-  height: 40px;
+  width: 52px;
+  height: 52px;
   background: var(--bg-deep);
   border: 4px solid var(--text-main);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 11px;
+  white-space: nowrap;
 }
 
 .world-map__node.is-active .world-map__flag {
@@ -179,8 +186,9 @@ h3,
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 46px;
-  height: 46px;
+  width: auto;
+  height: auto;
+  overflow: visible;
   transition: transform 0.12s steps(2);
 }
 
@@ -224,8 +232,8 @@ h3,
   }
 
   .world-map__flag {
-    width: 34px;
-    height: 34px;
+    width: 44px;
+    height: 44px;
     border-width: 3px;
     font-size: 9px;
   }
