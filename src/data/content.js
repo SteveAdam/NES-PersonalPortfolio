@@ -8,7 +8,7 @@ export const profile = {
   name: 'Steve Adam Maina',
   role: 'Full Stack Developer',
   tagline: 'Building scalable Web & Mobile apps — and testing them until they don\u2019t break.',
-  about: `Full stack developer with 2+ years of experience building scalable web
+  about: `Full stack developer with 3+ years of experience building scalable web
 and mobile applications. Specialized in Angular, React, Node.js, and Flutter,
 with proven expertise in quality assurance and performance testing.
 Passionate about delivering high-quality software through clean, documented
@@ -396,5 +396,5 @@ export const contact = {
   email: 'steve.kyrosevents@gmail.com',
   github: 'https://github.com/SteveAdam',
   linkedin: 'https://www.linkedin.com/in/steve-adam-595b75307/',
-  cvFile: 'steve_adam_maina_cv.pdf',
+  cvFile: 'Steve-Adam-Maina-CV.pdf',
 }

@@ -1,11 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
 import { levels, contact } from '../data/content.js'
 
+// TODO: swap this for something unique to you — anyone who knows the
+// namespace+name pair can hit this same public counter.
+const COUNTER_WORKSPACE = 'adamissteves-team-5549'
+const COUNTER_NAME = 'first-counter-5549'
+const COUNTER_BASE = `https://api.counterapi.dev/v2/${COUNTER_WORKSPACE}/${COUNTER_NAME}`
+
 export default function WorldMap() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [playerX, setPlayerX] = useState(0)
   const trackRef = useRef(null)
   const nodeRefs = useRef([])
+  const [glances, setGlances] = useState(null)
+  const hasCounted = useRef(false)
 
   // Which section is active, via scroll position.
   useEffect(() => {
@@ -55,8 +63,37 @@ export default function WorldMap() {
     }
   }, [activeIndex])
 
+  // Views/"glances" counter — increments once per browser session, just
+  // reads (doesn't increment) on refreshes within the same tab session.
+  useEffect(() => {
+    if (hasCounted.current) return
+    hasCounted.current = true
+
+    const counted = sessionStorage.getItem('glanceCounted')
+    const url = counted ? COUNTER_BASE : `${COUNTER_BASE}/up`
+
+    fetch(url) // no headers → no preflight
+      .then((res) => {
+        if (!res.ok) throw new Error(`Counter responded ${res.status}`)
+        return res.json()
+      })
+      .then((data) => {
+        const value = data?.data?.up_count ?? data?.data?.value ?? null
+        setGlances(value)
+        sessionStorage.setItem('glanceCounted', '1')
+      })
+      .catch((err) => console.error('Glance counter failed:', err))
+  }, [])
+
   return (
     <nav className="world-map" aria-label="Section progress">
+      <div className="world-map__glances" aria-label="Page glance count">
+        <i className="nes-icon eye is-small"></i>
+        <span className="world-map__glances-count press-start">
+          {glances === null ? '···' : glances}
+        </span>
+      </div>
+
       <div className="world-map__row">
         <div className="world-map__track" ref={trackRef}>
           <div className="world-map__line" />

@@ -142,6 +142,28 @@ h3,
   transition: left 0.35s steps(6);
 }
 
+.world-map__glances {
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 8px 16px;
+  background: var(--bg-deep);
+  border: 3px solid var(--text-main);
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.world-map__glances-count {
+  font-size: 14px;
+  color: var(--text-main);
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
 .world-map__links {
   position: absolute;
   top: 50%;
@@ -172,6 +194,14 @@ h3,
     right: clamp(8px, 3vw, 12px);
     gap: clamp(4px, 3vw, 16px);
     transform: none;
+  }
+
+  .world-map__glances {
+    top: 12px;
+    left: clamp(8px, 3vw, 12px);
+    transform: none;
+    padding: 6px 12px;
+    gap: 8px;
   }
 
   .world-map__track {
@@ -207,6 +237,10 @@ h3,
   .world-map__player {
     top: -20px;
     font-size: 14px;
+  }
+
+  .world-map__glances-count {
+    font-size: 11px;
   }
 
 }
